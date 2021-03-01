@@ -17,7 +17,7 @@ from PIL import Image
 mndata = MNIST(r'train')
 X_train, Y_train = mndata.load_training()
 
-mndata = MNIST('test')
+mndata = MNIST(r'test')
 X_test, Y_test = mndata.load_testing()
 
 
@@ -69,7 +69,7 @@ def data_fit(data):
                 x = 0
                 for k in range(3):
                     x += data[i][j][k]
-                    data_final.append(x/3)
+                data_final.append(x/3)
         return data_final
 
 def invert_image(data):
@@ -110,5 +110,4 @@ def res_to_json(path):
     }
     return json.dumps(dictionnary, indent = 3, sort_keys = True)
 
-#print(res_to_json(r"8.jpg"))
-print(number_of_pixels(X_train, X_test))
+print(res_to_json(r"8.jpg"))
