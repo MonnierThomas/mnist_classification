@@ -58,4 +58,4 @@ Fore more information about the code, open the explanation_code.ipynb on Jupyter
 ### Special Thanks
 Yann LeCun
 
-Georges Ryssen, CEO, DeepMove,
+Georges Ryssen, CEO, DeepMove
