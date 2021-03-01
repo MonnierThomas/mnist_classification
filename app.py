@@ -59,6 +59,7 @@ def data_fit(data):
     If the array contains 4 values (RGB + Greyscale) for each pixel, the function returns only the list of the Greyscale part of the image.
     Else, it returns the list of the average of the three values (RGB) for each pixel.
     """
+    nb_pixels = number_of_pixels(X_train, X_test)
     if len(data[0][0]) == 4:
         return [data[i][j][3] for j in range(nb_pixels) for i in range(nb_pixels)]
     else:
@@ -87,6 +88,7 @@ def get_classification(path):
     Then the function converts the image to a numpy array.
     Finally the function predicts the classification of the image thanks to the pipeline method
     """
+    nb_pixels = number_of_pixels(X_train, X_test)
     image = Image.open(path).resize((nb_pixels, nb_pixels)) # resize the image in order to fit the MNIST sets
     data = numpy.asarray(image)                             # convert the image to an array containing the pixels of the image
     data_fixed = data_fit(data)
