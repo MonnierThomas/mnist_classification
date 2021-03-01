@@ -110,4 +110,5 @@ def res_to_json(path):
     }
     return json.dumps(dictionnary, indent = 3, sort_keys = True)
 
-print(res_to_json(r"8.jpg"))
+#print(res_to_json(r"8.jpg"))
+print(number_of_pixels(X_train, X_test))
