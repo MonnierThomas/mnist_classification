@@ -51,7 +51,7 @@ def pipeline_classification():
     pipe = Pipeline([('scaler', StandardScaler()), ('svc', SVC())]) # initialisation of the method
     Y_train_r, Y_test_r = get_numpy(Y_train, Y_test)
     pipe.fit(X_train, Y_train_r)                                    # fitting the pipline to the training images and labels
-    return pipe.score(X_test, Y_test_r)                               # score obtained by applying the pipeline to the test images and labels
+    return pipe, pipe.score(X_test, Y_test_r)                       # score obtained by applying the pipeline to the test images and labels
 
 def data_fit(data):
     """
@@ -82,7 +82,7 @@ def invert_image(data):
         data_reverse.append(abs(x - 255))
     return data_reverse
 
-def get_classification(path):
+def get_classification(path, pipe):
     """
     This function calls the path of an image, open it thanks to the library PIL and the method Image.
     Then the function converts the image to a numpy array.
@@ -100,8 +100,8 @@ def res_to_json(path):
     This function calls the path of an image and returns the prediction of its classification in a JSON file containing
     its path, its classification and the accuracy of the method used.
     """
-    accuracy = pipeline_classification()
-    res = get_classification(path)[0]
+    pipe, accuracy = pipeline_classification()
+    res = get_classification(path, pipe)[0]
     
     json_d = {
         "image": f'{path}',
