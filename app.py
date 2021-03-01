@@ -51,7 +51,7 @@ def pipeline_classification():
     pipe = Pipeline([('scaler', StandardScaler()), ('svc', SVC())]) # initialisation of the method
     Y_train_r, Y_test_r = get_numpy(Y_train, Y_test)
     pipe.fit(X_train, Y_train_r)                                    # fitting the pipline to the training images and labels
-    return pipe.score(X_Test, Y_test)                               # score obtained by applying the pipeline to the test images and labels
+    return pipe.score(X_test, Y_test)                               # score obtained by applying the pipeline to the test images and labels
 
 def data_fit(data):
     """
@@ -90,7 +90,7 @@ def get_classification(path):
     image = Image.open(path).resize((nb_pixels, nb_pixels)) # resize the image in order to fit the MNIST sets
     data = numpy.asarray(image)                             # convert the image to an array containing the pixels of the image
     data_fixed = data_fit(data)
-    data_final = inver_image(data_fixed)                    # images are very often inverted in terms of values in comparison to MNIST images so don't forget to check
+    data_final = invert_image(data_fixed)                    # images are very often inverted in terms of values in comparison to MNIST images so don't forget to check
     return pipe.predict(np.array(data_final).reshape(1, -1))
 
 def res_to_json(path):
