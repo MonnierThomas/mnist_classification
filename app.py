@@ -31,7 +31,7 @@ def number_of_pixels(train : list, test : list) -> int:
     try:
         if len(train[1]) == len(test[1]):
             nb_pixels = len(train[1])
-            return sqrt(nb_pixels)
+            return int(sqrt(nb_pixels))
     except:
         print("The numbers of pixels of images in the train dataset and the test dataset are not the same, thus it is abnormal")
 
