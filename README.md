@@ -56,5 +56,6 @@ Download your image of a handwritten number in the folder containing all the fil
 Fore more information about the code, open the explanation_code.ipynb on Jupyter Notebook (Anaconda) or Visual Studio Code (Python extension) to understand better the writing of the code.
 
 ### Special Thanks
-Yann LeCun, /n
+Yann LeCun
+
 Georges Ryssen, CEO, DeepMove,
