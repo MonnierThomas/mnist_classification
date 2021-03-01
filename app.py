@@ -79,7 +79,7 @@ def invert_image(data):
     """
     data_reverse = []
     for x in data:
-        image_reverse.append(abs(x - 255))
+        data_reverse.append(abs(x - 255))
     return data_reverse
 
 def get_classification(path):
