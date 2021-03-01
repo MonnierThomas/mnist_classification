@@ -31,7 +31,7 @@ You will have to download the MNIST dataset [2]. This dataset contains four file
 - t10k-images-idx3-ubyte.gz is the test set of images (10,000 images)
 - t10k-labels-idx1-ubyte.gz is the test of labels (labels of the test set)
 
-Since these sets are compressed, you have to unzip the files. Check if your zipper hasn't renamed the files with '.' instead of '-'. You need :
+Since these sets are compressed, you have to unzip the files. Check if your zipper hasn't renamed the files with **..** instead of **-**. You need :
 - train-images-idx3-ubyte
 - train-labels-idx1-ubyte
 - t10k-images-idx3-ubyte
@@ -50,7 +50,7 @@ Follow the instructions on GitHub to clone this repository. Put the *train* and 
 And just execute these commands :
 
 ### 5) Use your own images and get the JSON file
-Download on the directory your image of a handwritten number and get the result !
+Download your image of a handwritten number in the folder containing all the files and get the result !
 
 ### To know more ...
 Fore more information about the code, open the explanation_code.ipynb on Jupyter Notebook (Anaconda) or Visual Studio Code (Python extension) to understand better the writing of the code.
