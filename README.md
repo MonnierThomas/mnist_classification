@@ -52,6 +52,8 @@ And just execute these commands :
 ### 5) Use your own images and get the JSON file
 Download your image of a handwritten number in the folder containing all the files and get the result !
 
+You can test this Docker app on the three images available in the repository. Don't forget to understand the code (there are few minors details to fix when passing from .jpg to .png).
+
 ### To know more ...
 Fore more information about the code, open the explanation_code.ipynb on Jupyter Notebook (Anaconda) or Visual Studio Code (Python extension) to understand better the writing of the code.
 
