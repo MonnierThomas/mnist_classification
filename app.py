@@ -78,7 +78,7 @@ def invert_image(data):
     For instance, 0 -> 255 and 185 -> 70
     """
     data_reverse = []
-    for x in image:
+    for x in data:
         image_reverse.append(abs(x - 255))
     return data_reverse
 
