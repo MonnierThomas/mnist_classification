@@ -67,7 +67,7 @@ def data_fit(data):
         for i in range(nb_pixels):
             for j in range(nb_pixels):
                 x = 0
-                for k in range(len(data[0][0])):
+                for k in range(3):
                     x += data[i][j][k]
                     data_final.append(x/3)
         return data_final
