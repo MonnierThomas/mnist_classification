@@ -49,7 +49,7 @@ def pipeline_classification():
     """
     nb_pixels = number_of_pixels(X_train, X_test)
     pipe = Pipeline([('scaler', StandardScaler()), ('svc', SVC())]) # initialisation of the method
-    Y_train_r, Y_test_r = ger_numpy(Y_train, Y_test)
+    Y_train_r, Y_test_r = get_numpy(Y_train, Y_test)
     pipe.fit(X_train, Y_train_r)                                    # fitting the pipline to the training images and labels
     return pipe.score(X_Test, Y_test)                               # score obtained by applying the pipeline to the test images and labels
 
