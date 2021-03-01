@@ -90,7 +90,7 @@ def get_classification(path):
     """
     nb_pixels = number_of_pixels(X_train, X_test)
     image = Image.open(path).resize((nb_pixels, nb_pixels)) # resize the image in order to fit the MNIST sets
-    data = numpy.asarray(image)                             # convert the image to an array containing the pixels of the image
+    data = np.asarray(image)                             # convert the image to an array containing the pixels of the image
     data_fixed = data_fit(data)
     data_final = invert_image(data_fixed)                    # images are very often inverted in terms of values in comparison to MNIST images so don't forget to check
     return pipe.predict(np.array(data_final).reshape(1, -1))
