@@ -108,6 +108,6 @@ def res_to_json(path):
         "prediction": f'{res}',
         "accuracy": f'{accuracy}'
     }
-    return json.dumps(dictionnary, indent = 3, sort_keys = True)
+    return json.dumps(json_d, indent = 3, sort_keys = True)
 
 print(res_to_json(r"8.jpg"))
