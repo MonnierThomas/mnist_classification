@@ -58,15 +58,11 @@ And just execute these commands :
 - **docker images** to check if the image has been correctly created
 - **docker run your-docker-image** to run the python file and to print the output in the terminal. Because we gave the python algorithm the test image 8.jpg (an image of a 8), you should see printed : 
 
-<div align="center"> {
-
-   "accuracy": "0.966",
+<div align="center"> { "accuracy": "0.966",
    
    "image": "8.jpg",
    
-   "prediction": "8"
-   
-} </div>
+   "prediction": "8" } </div>
 
   
 
