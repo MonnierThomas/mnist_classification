@@ -1,10 +1,11 @@
+from keras.datasets import mnist
+
 from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
-from mnist import MNIST
 
 from math import sqrt
 import numpy as np
@@ -13,13 +14,18 @@ import json
 from PIL import Image
 
 
+# Loading of the datasets
+(X_train, Y_train), (X_test, Y_test) = mnist.load_data()
 
-mndata = MNIST(r'train')
-X_train, Y_train = mndata.load_training()
+# Create a list of list of training images instead of a 3D matrix
+train_images = []
+for image in X_train:
+    train_images.append(image.reshape((1, 28*28))[0])
 
-mndata = MNIST(r'test')
-X_test, Y_test = mndata.load_testing()
-
+# Create a list of list of test images instead of a 3D matrix
+test_images = []
+for image in X_test:
+    test_images.append(image.reshape((1, 28*28))[0])
 
 def number_of_pixels(train : list, test : list) -> int:
     """
@@ -47,11 +53,11 @@ def pipeline_classification():
     This function executes the pipeline method of scikit-sklearn.
     See more information on https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html
     """
-    nb_pixels = number_of_pixels(X_train, X_test)
+    nb_pixels = number_of_pixels(train_images, test_images)
     pipe = Pipeline([('scaler', StandardScaler()), ('svc', SVC())]) # initialisation of the method
-    Y_train_r, Y_test_r = get_numpy(Y_train, Y_test)
-    pipe.fit(X_train, Y_train_r)                                    # fitting the pipline to the training images and labels
-    return pipe, pipe.score(X_test, Y_test_r)                       # score obtained by applying the pipeline to the test images and labels
+    train_labels, test_labels = get_numpy(Y_train, Y_test)
+    pipe.fit(train_images, train_labels)                            # fitting the pipline to the training images and labels
+    return pipe, pipe.score(test_images, test_labels)               # score obtained by applying the pipeline to the test images and labels
 
 def data_fit(data):
     """
@@ -59,7 +65,7 @@ def data_fit(data):
     If the array contains 4 values (RGB + Greyscale) for each pixel, the function returns only the list of the Greyscale part of the image.
     Else, it returns the list of the average of the three values (RGB) for each pixel.
     """
-    nb_pixels = number_of_pixels(X_train, X_test)
+    nb_pixels = number_of_pixels(train_images, test_images)
     if len(data[0][0]) == 4:
         return [data[i][j][3] for j in range(nb_pixels) for i in range(nb_pixels)]
     else:
@@ -88,7 +94,7 @@ def get_classification(path, pipe):
     Then the function converts the image to a numpy array.
     Finally the function predicts the classification of the image thanks to the pipeline method
     """
-    nb_pixels = number_of_pixels(X_train, X_test)
+    nb_pixels = number_of_pixels(train_images, test_images)
     image = Image.open(path).resize((nb_pixels, nb_pixels)) # resize the image in order to fit the MNIST sets
     data = np.asarray(image)                             # convert the image to an array containing the pixels of the image
     data_fixed = data_fit(data)
