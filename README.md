@@ -24,7 +24,7 @@ In order to use this very simple app, you need to meet the following steps :
 ### 1) Install Docker
 Please check the previous paragraph.
 
-### 2) Download the MNIST dataset from Yann LeCun
+### 2) (Optional) Download the MNIST dataset from Yann LeCun
 You will have to download the MNIST dataset [2]. This dataset contains four files.
 - train-images-idx3-ubyte.gz is the training set of images (60,000 images)
 - train-labels-idx1-ubyte.gz is the training set of labels (labels of the training set)
@@ -39,18 +39,39 @@ Since these sets are compressed, you have to unzip the files. Check if your zipp
 
 Create a new folder *train* with the training sets of images and labels and another one *test* with the test sets of images and labels.
 
+Now you are able to use the training and test sets of MNIST images. You can modify them and print them with libraries such as matplotlib. However, we prefer using directly the method mnist from keras.datasets which can be installed by downloading the right versions of TensorFlow and keras. Hence, is is mandatory to download the MNIST datasets.
+
 [2] : http://yann.lecun.com/exdb/mnist/
 
 ### 3) Clone this GitHub repository
-Follow the instructions on GitHub to clone this repository. Put the *train* and *test* folders in it. [3]
+Follow the instructions on GitHub to clone this repository. 
+
+Optional : Put the *train* and *test* folders in it if you want to use them. [3]
 
 [3] : The *train* and *set* folders have not been add to the GitHub repository because of the weigth of the files.
 
 ### 4) Open a new terminal 
+Go to the directory where you have cloned to GitHub repository.
 And just execute these commands :
+
+- **docker build -t your-docker-image .** Do not forget the point at the end and precise the name of your docker image at your-docker-image.
+- **docker images** to check if the image has been correctly created
+- **docker run your-docker-image** to run the python file and to print the output in the terminal. You should see : 
+- {
+   "accuracy": "0.966",
+   "image": "C:\\Users\\Thomas MONNIER\\Documents\\C\u00e9sure\\DeepMove\\docker-image_classification\\8.jpg",
+   "prediction": "8"
+} because we gave the python algorithm the image 8.jpg. 
+
+  
 
 ### 5) Use your own images and get the JSON file
 Download your image of a handwritten number in the folder containing all the files and get the result !
+
+You can modify the image to be predicted directly by clicking on app.py. There is no problem if you do not have Python installed on your device. Just open it with text and replaced the last code line by **image.jpg** who must have been downloaded following these instructions :
+- download the image in the folder containing the GitHub repository
+- name it image.jpg
+- if the image is not in the jpg format, you must convert it to jpg before using the Docker app
 
 You can test this Docker app on the three images available in the repository. Don't forget to understand the code (there are few minors details to fix when passing from .jpg to .png).
 
