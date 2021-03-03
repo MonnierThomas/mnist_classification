@@ -58,9 +58,13 @@ And just execute these commands :
 - **docker images** to check if the image has been correctly created
 - **docker run your-docker-image** to run the python file and to print the output in the terminal. You should see : 
 - {
+
    "accuracy": "0.966",
-   "image": "C:\\Users\\Thomas MONNIER\\Documents\\C\u00e9sure\\DeepMove\\docker-image_classification\\8.jpg",
+   
+   "image": "8.jpg",
+   
    "prediction": "8"
+   
 } because we gave the python algorithm the image 8.jpg. 
 
   
