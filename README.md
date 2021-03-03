@@ -74,7 +74,8 @@ You can modify the image to be predicted directly by clicking on app.py. There i
 - name it image.jpg
 - if the image is not in the jpg format, you must convert it to jpg before using the Docker app
 
-You can test this Docker app on the three images available in the repository. Don't forget to understand the code (there are few minors details to fix when passing from .jpg to .png).
+You can test this Docker app on the image 8.jpg available in the repository. Don't forget to understand the code !
+
 
 ### To know more ...
 Fore more information about the code, open the explanation_code.ipynb on Jupyter Notebook (Anaconda) or Visual Studio Code (Python extension) to understand better the writing of the code.
