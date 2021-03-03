@@ -56,7 +56,7 @@ And just execute these commands :
 
 - **docker build -t your-docker-image .** Do not forget the point at the end and precise the name of your docker image at your-docker-image.
 - **docker images** to check if the image has been correctly created
-- **docker run your-docker-image** to run the python file and to print the output in the terminal. You should see : 
+- **docker run your-docker-image** to run the python file and to print the output in the terminal. Because we gave the python algorithm the test image 8.jpg (an image of a 8), you should see printed : 
 - {
 
    "accuracy": "0.966",
@@ -65,7 +65,7 @@ And just execute these commands :
    
    "prediction": "8"
    
-} because we gave the python algorithm the image 8.jpg. 
+}  
 
   
 
