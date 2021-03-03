@@ -1,11 +1,13 @@
-# Use an official Python runtime as a base image
-FROM python:3
+# Use an official Python TensorFlow runtime as a base image
+FROM tensorflow/tensorflow:2.2.0
 
 # Set the working directory to /docker_image_classification
 WORKDIR /docker-image_classification
 
-# Copy the current directory contents into the container at /app
-# ADD . /docker-image_classification
+# Copy the current directory contents into the container
+COPY app.py ./
+COPY requirements.txt ./
+COPY 8.jpg ./
 
 # Install any needed packages specified in requirements.txt
 RUN python -m pip install -r requirements.txt 
@@ -17,6 +19,4 @@ EXPOSE 80
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["app.py"]
-
-ENTRYPOINT ["python3"]
+CMD ["python", "app.py"]
