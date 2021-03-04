@@ -26,8 +26,8 @@ def number_of_pixels(train : list, test : list) -> int:
     (X_train, Y_train), (X_test, Y_test) = mnist.load_data()
     train_images, test_images = get_list_images(X_train, X_test)
     try:
-        if len(train[1]) == len(test[1]):
-            nb_pixels = len(train[1])
+        if len(train_images[1]) == len(test_images[1]):
+            nb_pixels = len(train_images[1])
             return int(sqrt(nb_pixels))
     except:
         print("The numbers of pixels of images in the train dataset and the test dataset are not the same, thus it is abnormal")
@@ -139,4 +139,4 @@ def main():
     print(res_to_json(r"8.jpg"))
 
     
-main()
+print(main())
