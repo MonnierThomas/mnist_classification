@@ -1,5 +1,5 @@
 # docker-image_classification
-This GitHub repository aims to classify images thanks to a pipeline algorithm trained and tested on the MNIST dataset of Yann LeCun. Hence, this very simple Docker app can classify images and return a JSON file containing the result. 
+This GitHub repository aims to classify images of handwritten numbers (between 0 and 9) thanks to a pipeline algorithm trained and tested on the MNIST dataset of Yann LeCun. Hence, this very simple Docker app can classify images and can return a JSON file containing the result. 
 
 ## Docker
 
@@ -25,11 +25,11 @@ In order to use this very simple app, you need to meet the following steps :
 Please check the previous paragraph.
 
 ### 2) (Optional) Download the MNIST dataset from Yann LeCun
-You will have to download the MNIST dataset [2]. This dataset contains four files.
-- train-images-idx3-ubyte.gz is the training set of images (60,000 images)
+You can download the MNIST dataset [2]. This dataset contains four files.
+- train-images-idx3-ubyte.gz is the training set of images (60,000 images of 28x28 pixels)
 - train-labels-idx1-ubyte.gz is the training set of labels (labels of the training set)
 - t10k-images-idx3-ubyte.gz is the test set of images (10,000 images)
-- t10k-labels-idx1-ubyte.gz is the test of labels (labels of the test set)
+- t10k-labels-idx1-ubyte.gz is the test of labels (labels of the test set of 28x28 pixels)
 
 Since these sets are compressed, you have to unzip the files. Check if your zipper hasn't renamed the files with **..** instead of **-**. You need :
 - train-images-idx3-ubyte
@@ -39,7 +39,7 @@ Since these sets are compressed, you have to unzip the files. Check if your zipp
 
 Create a new folder *train* with the training sets of images and labels and another one *test* with the test sets of images and labels.
 
-Now you are able to use the training and test sets of MNIST images. You can modify them and print them with libraries such as matplotlib. However, we prefer using directly the method mnist from keras.datasets which can be installed by downloading the right versions of TensorFlow and keras. Hence, is is mandatory to download the MNIST datasets.
+Now you are able to use the training and test sets of MNIST images. You can modify them and print them with libraries such as matplotlib. However, we prefer using directly the method mnist from keras.datasets which can be installed by downloading the right versions of TensorFlow and keras. Hence, is is not mandatory to download the MNIST datasets.
 
 [2] : http://yann.lecun.com/exdb/mnist/
 
