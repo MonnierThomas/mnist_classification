@@ -13,7 +13,7 @@ import json
 from PIL import Image
 
 
-def number_of_pixels(train : list, test : list) -> int:
+def number_of_pixels() -> int:
     """
     This function calls the training images and test images and returns the square root of the number of pixels of each image.
     The postulate is that every images of the training set and the test set have the same number of pixels.
@@ -110,7 +110,7 @@ def get_classification(path, pipe):
     nb_pixels = number_of_pixels()
     image = Image.open(path).resize((nb_pixels, nb_pixels)) # resize the image in order to fit the MNIST sets
     data = np.asarray(image)                                # convert the image to an array containing the pixels of the image
-    data_fixed = data_fit(data)
+    data_fixed = data_fit(data, nb_pixels)
     data_final = invert_image(data_fixed)                   # images are very often inverted in terms of values in comparison to MNIST images so don't forget to check
     return pipe.predict(np.array(data_final).reshape(1, -1))
 
