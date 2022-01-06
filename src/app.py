@@ -6,14 +6,11 @@ from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
-
 from math import sqrt
 import numpy as np
 
 import json
 from PIL import Image
-
-
 
 
 def number_of_pixels(train : list, test : list) -> int:
