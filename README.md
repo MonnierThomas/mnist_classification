@@ -4,20 +4,27 @@ This GitHub repository aims to classify images of handwritten numbers (between 0
 # Table of contents
 
 - [Docker](#docker)
+- - [What is Docker?](#what-is-docker)
+- - [How to install Docker?](#how-to-install-docker)
 - [Pipeline Classification of a MNIST dataset](#pipeline-classification-of-a-mnist-dataset)
+- - [Install Docker](#install-docker)
+- - [(Optional) Download the MNIST dataset from Yann LeCun](#optional-download-the-mnist-dataset-from-yann-lecun)
+- - [Clone this GitHub repository](#clone-this-github-repository)
+- - [Open a new terminal](#open-a-new-terminal)
+- - [Use your own images and get the JSON file](#use-your-own-images-and-get-the-json-file)
 - [To know more](#to-know-more)
 - [Special Thanks](#special-thanks)
 
 # Docker
 
-## What is Docker ?
+## What is Docker?
 "Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production." [1]
 
 Docker is used in many firms and brands because it makes virtualization very easy to manipulate. Instead of installing a virtual machine on your computer - which needs lots of RAM permanently -, you only need to install Docker lcoally. It is called **lightweight virtualization**. Now you can work locally and share your files to others, even if they don't have the same environment : MacOs, Linux, Windows ... Life gets to be easier than ever !
 
 [1] : https://docs.docker.com/get-started/overview/
 
-## How to install Docker ?
+## How to install Docker?
 You need to follow some operations in order to make Docker functional on your laptop. Please check this website to install Docker Engine on Ubuntu (approx. 10 minutes) : https://docs.docker.com/engine/install/ubuntu/
 
 If you work in a Windows environment, then you will have to meet the following prerequisites : you need one of the Windows version among Windows Professional, Windows Education and Windows Enterprise. Then you can get Docker Desktop on Windows : https://docs.docker.com/docker-for-windows/install/
@@ -28,10 +35,10 @@ If your work in a MacOs environment, please check the prerequisites and install 
 
 In order to use this very simple app, you need to meet the following steps :
 
-## 1) Install Docker
+## Install Docker
 Please check the previous paragraph.
 
-## 2) (Optional) Download the MNIST dataset from Yann LeCun
+## (Optional) Download the MNIST dataset from Yann LeCun
 You can download the MNIST dataset [2]. This dataset contains four files.
 - train-images-idx3-ubyte.gz is the training set of images (60,000 images of 28x28 pixels)
 - train-labels-idx1-ubyte.gz is the training set of labels (labels of the training set)
@@ -50,14 +57,14 @@ Now you are able to use the training and test sets of MNIST images. You can modi
 
 [2] : http://yann.lecun.com/exdb/mnist/
 
-## 3) Clone this GitHub repository
+## Clone this GitHub repository
 Follow the instructions on GitHub to clone this repository. 
 
 Optional : Put the *train* and *test* folders in it if you want to use them. [3]
 
 [3] : The *train* and *set* folders have not been add to the GitHub repository because of the weigth of the files.
 
-## 4) Open a new terminal 
+## Open a new terminal 
 Go to the directory where you have cloned to GitHub repository.
 And just execute these commands :
 
@@ -72,7 +79,7 @@ And just execute these commands :
    "prediction": "8" } </div>
 
   
-## 5) Use your own images and get the JSON file
+## Use your own images and get the JSON file
 Download your image of a handwritten number in the folder containing all the files and get the result !
 
 You can modify the image to be predicted directly by clicking on app.py. There is no problem if you do not have Python installed on your device. Just open it with text and replaced the last code line by **image.jpg** who must have been downloaded following these instructions :
