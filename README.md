@@ -1,4 +1,4 @@
-# Docker Image Classification
+# Handwritten Numbers Classification (with Docker)
 This GitHub repository aims to classify images of handwritten numbers (between 0 and 9) thanks to a pipeline algorithm trained and tested on the MNIST dataset of Yann LeCun. Hence, this very simple Docker app can classify images and can return a JSON file containing the result. 
 
 # Table of contents
