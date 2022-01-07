@@ -91,7 +91,7 @@ You can test this Docker app on the image 8.jpg available in the repository. Don
 
 
 # To know more
-Fore more information about the code, open the explanation_code.ipynb on Jupyter Notebook (Anaconda) or Visual Studio Code (Python extension) to understand better the writing of the code.
+Fore more information about the code, open the [notebook](notebook/explanation_code.ipynb) on Jupyter Notebook (Anaconda) or Visual Studio Code (Python extension) to understand better the writing of the code.
 
 # Special Thanks
 Yann LeCun
